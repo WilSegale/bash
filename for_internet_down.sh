@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #is my internet down?
-
-echo "What do you want to check?"
+echo "What do you want to check:"
 read target
 
 while true
