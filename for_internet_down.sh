@@ -11,6 +11,7 @@ do
     break
   else
     echo "$target is currently down."
+    break;
   fi
 sleep 2
 done
