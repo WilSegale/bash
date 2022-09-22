@@ -8,7 +8,7 @@ else
     exit
 fi
 sleep 1
-echo "Connecting to city database"
+echo "Connecting to city database."
 for x in $(cat cities.txt);
   do
     
