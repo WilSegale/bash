@@ -10,7 +10,7 @@ do
     echo "Hey, you're up!!"
     break
   else
-    echo "$target is currently down."
+    echo "$hostname currently down."
     break;
   fi
 sleep 2
