@@ -1,3 +1,3 @@
 cd ~/.vscode/extensions
 rm -rf *
-echo "Done"
+echo "All extensions to vscode have been removed."
