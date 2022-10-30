@@ -1,5 +1,5 @@
 read -p "input a site to ping: " site
-while true
+while True
 do
   if ping -q -c 2 -W 1 $site > /dev/null; then
     echo "https://$site is up"
