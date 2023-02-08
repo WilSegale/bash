@@ -1,0 +1,1 @@
+nmap -sP -n -r 192.168.1.1/24 --open | grep "is up"
