@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ~/.vscode/extensions
 echo "Are you sure that you want to remove all extensions"
 read -p "YES OR NO: " YesOrNo
