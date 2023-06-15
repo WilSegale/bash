@@ -11,6 +11,5 @@ echo "Connecting to city database."
 for x in $(cat cities.txt);
   do
     weather=$(curl -s http://wttr.in/$x?format=3)
-    sleep 1
     echo "The weather for $weather"
 done
