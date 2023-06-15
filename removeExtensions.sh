@@ -8,9 +8,9 @@ if  [[ $YesOrNo == "YES" ]] ||
     [[ $YesOrNo == "y" ]] || 
     [[ $YesOrNo == "Y" ]]; then
     rm -rf *
-    echo "All extensions from vscode have been removed. You will have to reset vscode"
+    echo "All extensions from vscode have been removed. You will have to reset vscode."
 else
-    echo "Ok your extensions will not be removed"
+    echo "Ok your extensions will not be removed."
     exit
 fi
 
