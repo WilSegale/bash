@@ -9,7 +9,7 @@ read -p "YES OR NO: " YesOrNo
 
 if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
     rm -rf *
-    echo "All extensions from vscode have been removed. You will have to reset vscode."
+    echo "All extensions from vscode have been removed. You will have to restart vscode."
 else
     echo "Ok, your extensions will not be removed."
     exit
