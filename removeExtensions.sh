@@ -5,7 +5,7 @@ RED='\033[31m'
 RESET='\033[0m'
 yes=("yes" "Yes" "YES" "y" "Y")
 
-extensions_dir="$HOME/.vscode/extensions"
+extensions_dir="~/.vscode/extensions"
 
 if ! cd "$extensions_dir"; then
     echo -e "${RED}[-]${RESET} ERROR"
@@ -17,13 +17,19 @@ echo "Are you sure you want to remove all extensions?"
 read -p "YES OR NO: " YesOrNo
 
 if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
-    rm -rf *
+    for file in *; do
+        if [ -d "$file" ]; then
+            echo "Deleting extension: $file"
+            rm -rf "$file"
+        fi
+    done
+
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}[+]${RESET} DONE"
         echo -e "${GREEN}[+]${RESET} All extensions from vscode have been removed. You will have to restart vscode."
-    elif [ $? != 0 ]; then
+    else
         echo -e "${RED}[-]${RESET} ERROR"
-        echo -e "${RED}[-]${RESET} No extensions found to remove."
+        echo -e "${RED}[-]${RESET} Failed to remove extensions."
     fi
 else
     echo -e "${RED}[-]${RESET} DONE"
