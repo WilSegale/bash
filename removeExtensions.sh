@@ -21,7 +21,7 @@ if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}[+]${RESET} DONE"
         echo -e "${GREEN}[+]${RESET} All extensions from vscode have been removed. You will have to restart vscode."
-    else
+    elif [ $? != 0 ]; then
         echo -e "${RED}[-]${RESET} ERROR"
         echo -e "${RED}[-]${RESET} No extensions found to remove."
     fi
