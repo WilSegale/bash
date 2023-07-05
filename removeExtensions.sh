@@ -19,7 +19,7 @@ if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
 
     if [[ -z "$(find "${extensions_dir}" -mindepth 1 -print -quit)" ]]; then
         echo "Folder is empty"
-    else 
+    else
         for file in *; do
             if [ -d "$file" ]; then
                 echo "Deleting extension: $file"
