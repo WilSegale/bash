@@ -3,6 +3,7 @@
 GREEN='\033[32m'
 RED='\033[31m'
 RESET='\033[0m'
+
 yes=("yes" "Yes" "YES" "y" "Y")
 
 extensions_dir="${HOME}/.vscode/extensions"
