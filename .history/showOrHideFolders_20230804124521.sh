@@ -1,0 +1,3 @@
+read -p "Do you want to 
+
+defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
