@@ -13,6 +13,7 @@ show_hide() {
     for option in "${show[@]}"; do
         if [[ "$option" == "$input" ]]; then
             # If a match is found, set Finder to show hidden files and restart it.
+            echo "[+] DONE - Hidden files are now able to be seen"
             defaults write com.apple.finder AppleShowAllFiles -bool true
             killall Finder
             found=true
@@ -25,6 +26,8 @@ show_hide() {
         for option in "${hide[@]}"; do
             if [[ "$option" == "$input" ]]; then
                 # If a match is found, set Finder to hide hidden files and restart it.
+                echo "[+] DONE - showen files are now hidden"
+
                 defaults write com.apple.finder AppleShowAllFiles -bool false
                 killall Finder
                 found=true
