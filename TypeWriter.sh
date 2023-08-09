@@ -1,4 +1,4 @@
-2#!/bin/bash
+#!/bin/bash
 
 typewriter_effect() {
   text=$1
