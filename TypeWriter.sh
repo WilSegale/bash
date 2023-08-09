@@ -13,6 +13,5 @@ typewriter_effect() {
 }
 
 # Example usage
-typewriter_effect "Hello, World!" 0.1
 typewriter_effect "This is a typewriter effect in Bash." 0.05
 
