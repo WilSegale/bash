@@ -50,7 +50,6 @@ read -p "YES OR NO: " YesOrNo
 if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
     remove_all_extensions
 else
-    echo -e "${RED}[-]${RESET} DONE"
     echo -e "${RED}[-]${RESET} Ok, your extensions will not be removed."
     exit
 fi
