@@ -1,11 +1,16 @@
-read -p "input a site to ping: " site
-while True
-do
-  if ping -q -c 2 -W 1 $site > /dev/null; then
+#!/bin/bash
+
+while true; do
+  read -p "Input a site to ping: " site
+  
+  if [ -z "$site" ]; then
+    echo "Please input a site to ping"
+  elif ping -q -c 2 -W 1 "$site" > /dev/null; then
     echo "https://$site is up 😀"
-	  break;
+    break
   else
-	  echo "https://$site is down 😭"
+    echo "https://$site is down 😭"
   fi
-sleep 2 
+  
+  sleep 2
 done
