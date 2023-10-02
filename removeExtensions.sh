@@ -8,6 +8,9 @@ RESET='\033[0m'
 # Array of possible "yes" values
 yes=("yes" "Yes" "YES" "y" "Y")
 
+#array of possible of lists that will show what inside the extension file
+list=("list" "show me what inside")
+
 # Path to the extensions directory
 extensions_dir="${HOME}/.vscode/extensions"
 
@@ -46,9 +49,12 @@ remove_all_extensions() {
 
 # Prompt the user to confirm the removal of all extensions
 echo "Are you sure you want to remove all extensions?"
-read -p "YES OR NO: " YesOrNo
-if [[ " ${yes[*]} " == *" $YesOrNo "* ]]; then
+read -p "YES, NO OR LIST: " YesOrNoOrList
+if [[ " ${yes[*]} " == *" $YesOrNoOrList "* ]]; then
     remove_all_extensions
+elif [[ " ${list[*]}" == *" $YesOrNoOrList "* ]]; then
+    ls $extensions_dir
+    exit 1
 else
     echo -e "${RED}[-]${RESET} Ok, your extensions will not be removed."
     exit
