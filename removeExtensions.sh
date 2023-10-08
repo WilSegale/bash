@@ -48,14 +48,19 @@ remove_all_extensions() {
 }
 
 # Prompt the user to confirm the removal of all extensions
-echo "Are you sure you want to remove all extensions?"
-read -p "YES, NO OR LIST: " YesOrNoOrList
-if [[ " ${yes[*]} " == *" $YesOrNoOrList "* ]]; then
-    remove_all_extensions
-elif [[ " ${list[*]}" == *" $YesOrNoOrList "* ]]; then
-    ls $extensions_dir
-    exit 1
-else
-    echo -e "${RED}[-]${RESET} Ok, your extensions will not be removed."
-    exit
-fi
+list_extensions() {
+    echo "Are you sure you want to remove all extensions?"
+    read -p "YES, NO OR LIST: " YesOrNoOrList
+    if [[ " ${yes[*]} " == *" $YesOrNoOrList "* ]]; then
+        remove_all_extensions
+    elif [[ " ${list[*]}" == *" $YesOrNoOrList "* ]]; then
+        ls $extensions_dir
+        sleep 1
+        echo
+        list_extensions
+    else
+        echo -e "${RED}[-]${RESET} Ok, your extensions will not be removed."
+        exit 1
+    fi
+}
+list_extensions
