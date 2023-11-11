@@ -11,7 +11,7 @@ show_hide() {
 
     # Check if the input matches any option in the "show" array.
     for option in "${show[@]}"; do
-        if [[ "$option" == "$input" ]]; then
+        if [[ "${option}" == "${input}" ]]; then
             # If a match is found, set Finder to show hidden files and restart it.
             echo "[+] DONE - Hidden files are now able to be seen"
             defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -22,9 +22,9 @@ show_hide() {
     done
 
     # If no match is found in the "show" array, check the "hide" array.
-    if [[ "$found" == false ]]; then
+    if [[ "${found}" == false ]]; then
         for option in "${hide[@]}"; do
-            if [[ "$option" == "$input" ]]; then
+            if [[ "${option}" == "${input}" ]]; then
                 # If a match is found, set Finder to hide hidden files and restart it.
                 echo "[+] DONE - showen files are now hidden"
 
@@ -37,7 +37,7 @@ show_hide() {
     fi
 
     # If the input is neither in the "show" nor "hide" array, display "Unknown option".
-    if [[ "$found" == false ]]; then
+    if [[ "${found}" == false ]]; then
         echo "Unknown option"
         sleep 1
         read -p "Do you want to show or hide folders: " new_input
