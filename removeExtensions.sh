@@ -15,7 +15,7 @@ list=("list" "show me what inside")
 extensions_dir="${HOME}/.vscode/extensions"
 
 # Check if the script can access the extensions directory
-if ! cd "$extensions_dir"; then
+if ! cd "${extensions_dir}"; then
     echo -e "${RED}[-]${RESET} ERROR"
     echo -e "${RED}[-]${RESET} Failed to access the extensions directory."
     exit 1
@@ -29,10 +29,10 @@ remove_all_extensions() {
     else
         # Loop through each file in the directory
         for file in *; do
-            if [ -d "$file" ]; then
+            if [ -d "${file}" ]; then
                 # Delete the extension directory
                 echo "Deleting extension: $file"
-                rm -rf "$file"
+                rm -rf "${file}"
             fi
         done
 
